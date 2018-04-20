@@ -5,7 +5,22 @@ use CRM_Contactul_ExtensionUtil as E;
 
 
 function contactul_civicrm_post($op, $objectName, $objectId, &$objectRef) {
-  CRM_Core_Session::setStatus("operation = $op - objet = $objectName");
+  if ($op = 'create') {
+    $allowedObjects = [
+      'Individual',
+      'Organization',
+      'Phone',
+      'Address',
+      'Email'
+    ];
+    if (in_array($objectName, $allowedObjects)) {
+      CRM_Core_Session::setStatus('CLONE!');
+    }
+    else {
+      CRM_Core_Session::setStatus("ne pas cloner: $objectName");
+    }
+  }
+  //CRM_Core_Session::setStatus("operation = $op - objet = $objectName");
 }
 
 
