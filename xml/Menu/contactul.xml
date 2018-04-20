@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/ldapcontact</path>
+    <page_callback>CRM_Contactul_Form_LdapContact</page_callback>
+    <title>LdapContact</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+</menu>
