@@ -5,7 +5,7 @@ use CRM_Contactul_ExtensionUtil as E;
 
 
 function contactul_civicrm_post($op, $objectName, $objectId, &$objectRef) {
-  if ($op = 'create') {
+  if ($op == 'create') {
     $allowedObjects = [
       'Individual',
       'Organization',
